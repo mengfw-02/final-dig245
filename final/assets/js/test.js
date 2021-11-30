@@ -38,14 +38,4 @@ function checkCookie(name) {
   }else{
     setCookie(name, 1, 30);
   }
-  // if (user != "") {
-  //   alert("Welcome again " + user);
-  // } else {
-  //   $("form").on('submit',function(event) {
-  //     user = document.getElementById("habitInput").value;});
-  //     console.log(user);
-  //    if (user != "" && user != null) {
-  //      setCookie("username", user, 30);
-  //    }
-  // }
 }

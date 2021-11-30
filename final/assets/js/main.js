@@ -4,13 +4,17 @@
 //   "counter": 0
 // };
 //
-$("#main").load("test.html");
-// console.log("hello");
+// $("#main").load("about.html");
+// // console.log("hello");
+// $("#toStart").click(function() {
+//   $("#main").load("start.html");
+//   console.log(1);
+// });
 
 var counter = 0;
 var habit = "empty";
 var days = 0;
-$(document).ready(function(){
+$(document).ready(function() {
   // $("form").on('submit',function(event) {
   //   input = document.getElementById("habitInput").value;
   //   console.log(input);
@@ -18,11 +22,11 @@ $(document).ready(function(){
   $("#progress").hide();
 
 });
-if(document.getElementById("amazonLink") != null){
+if (document.getElementById("amazonLink") != null) {
   document.getElementById("amazonLink").href += habit;
 }
 
-$( "#yes" ).click(function() {
+$("#yes").click(function() {
   counter++;
   console.log(counter);
   $("#yes").hide();
@@ -30,19 +34,19 @@ $( "#yes" ).click(function() {
   $("#amazon").show();
 });
 
-$( "#no" ).click(function() {
+$("#no").click(function() {
   console.log(counter);
   $("#yes").hide();
   $("#no").hide();
   $("#amazon").show();
 });
 
-$( "#amazonLink" ).click(function() {
+$("#amazonLink").click(function() {
   console.log(counter);
   $("#nothx").hide();
   $("#progress").show();
 });
-$( "#nothx" ).click(function() {
+$("#nothx").click(function() {
   console.log(counter);
   $("#nothx").hide();
   $("#progress").show();
