@@ -9,6 +9,7 @@ function setCookie(cname,cvalue,exdays) {
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
+  console.log(decodedCookie);
   let ca = decodedCookie.split(';');
   for(let i = 0; i < ca.length; i++) {
     let c = ca[i];
@@ -28,9 +29,9 @@ $("form").on('submit', function(event){
   checkCookie(val);
   return false;
 })
-function checkCookie() {
+function checkCookie(name) {
   let cookieVal = Number(getCookie(name));
-  console.log("checkCookie()", cookie)
+  console.log("checkCookie()", cookieVal)
   if(cookieVal !== "" && cookieVal !== null){
     console.log("cookie exists", cookieVal);
     setCookie(name, cookieVal += 1, 30);
