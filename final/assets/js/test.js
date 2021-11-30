@@ -21,17 +21,30 @@ function getCookie(cname) {
   }
   return "";
 }
-
+$("form").on('submit', function(event){
+  event.preventDefault();
+  let val = document.getElementById("habitInput").value;
+  console.log(val);
+  checkCookie(val);
+  return false;
+})
 function checkCookie() {
-  let user = getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
-  } else {
-    $("form").on('submit',function(event) {
-      user = document.getElementById("habitInput").value;});
-      console.log(user);
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
+  let cookieVal = Number(getCookie(name));
+  console.log("checkCookie()", cookie)
+  if(cookieVal !== "" && cookieVal !== null){
+    console.log("cookie exists", cookieVal);
+    setCookie(name, cookieVal += 1, 30);
+  }else{
+    setCookie(name, 1, 30);
   }
+  // if (user != "") {
+  //   alert("Welcome again " + user);
+  // } else {
+  //   $("form").on('submit',function(event) {
+  //     user = document.getElementById("habitInput").value;});
+  //     console.log(user);
+  //    if (user != "" && user != null) {
+  //      setCookie("username", user, 30);
+  //    }
+  // }
 }
