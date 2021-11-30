@@ -11,6 +11,7 @@
 //   console.log(1);
 // });
 
+
 var counter = 0;
 var habit = "empty";
 var days = 0;
